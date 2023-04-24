@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking Activity</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #587a8b;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+
+	body {  background-image: url("https://www.laminex.com.au/medias/p-LX-Steel-Blue-RGB-1200x1200-LR.jpg-1200Wx979H?context=bWFzdGVyfGltYWdlc3w1NjAzMXxpbWFnZS9qcGVnfGg2Ny9oYmYvODg2NjkxMjM3MDcxOC9wX0xYX1N0ZWVsX0JsdWVfUkdCXzEyMDB4MTIwMF9MUi5qcGdfMTIwMFd4OTc5SHwzNGU5MTcyOWRmNWQ2NDMxYWY4MDA1MTc2MzRmMDZjNzZmZTUzZTBkMjM0MDk4NjA2NjM3ZjUyMjcwNTkzOTll");
+            background-size: cover;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+		margin-top: 0;
+		margin-bottom: 10px;
+		color: #444;
+	}
+	
+	p {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	
+	.card-view {
+		margin: 10px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		background-color: #661e1e;
+		padding: 10px;
+	}
+
+	.card-view .container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	.card-view .container .slot {
+		display: flex;
+		align-items: center;
+	}
+
+	.card-view .container .slot i {
+		margin-right: 10px;
+		font-size: 24px;
+		color: #8700e1;
+	}
+	
+	.card-view h2 {
+		font-size: 24px;
+		color: #333;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	.card-view .cost {
+		font-size: 18px;
+		color: #8700e1;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.cost-calculation {
+		margin: 15px;
+		background-color: #fff;
+		padding: 10px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	}
+
+	.cost-calculation h3 {
+		font-size: 24px;
+		color: #333;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+
+	.cost-calculation .item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin: 5px 0;
+		font-size: 18px;
+	}
+
+	.cost-calculation .item .name {
+		margin-right: 10px;
+	}
+
+	.cost-calculation .item .cost {
+		font-style: italic;
+		font-weight: bold;
+		color: #8700e1;
+	}
+
+	label {
+		display: block;
+		font-size: 18px;
+		font-weight: bold;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		color: #444;
+	}
+
+	input[type="number"] {
+		padding: 10px;
+		font-size: 16px;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		margin-bottom: 10px;
+		width: 100%;
+		max-width: 300px;
+		/* Reset styles */
+	}
+
+ */ {
+ box-sizing: border-box;
+  margin: 0;
+ padding: 0;
+}/*
+
+/* General styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Card view styles */
+
+.card-view {
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  padding: 10px;
+}
+
+.card-view .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-view .container .slot {
+  display: flex;
+  align-items: center;
+}
+
+.card-view .container .slot i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #8700e1;
+}
+
+.card-view h2 {
+  font-size: 24px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card-view .cost {
+  font-size: 18px;
+  color: #8700e1;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Cost calculation styles */
+
+.cost-calculation {
+  margin: 15px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cost-calculation h3 {
+  font-size: 24px;
+  color: #241010;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.cost-calculation .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.cost-calculation .item .name {
+  margin-right: 10px;
+}
+
+.cost-calculation .item .cost {
+  font-style: italic;
+  font-weight: bold;
+  color: #8700e1;
+}
+					*enter duration*
+label {            
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.card button {
+			background-color: #8700e1;
+			border: none;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: center;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+/* Form styles */
+
+form label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #a93232;
+}
+
+form input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+form input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  color: rgb(255, 7, 7);
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+</style>
+</head>
+
+
+
+
+
+	
+<body>
+	<div class="card-view">
+		<div class="container">
+			<div class="slot">
+				<i class="material-icons">Book Parking </i>
+				<h2>Slot 4 </h2>
+			</div>
+			<h2 class="cost">Amount</h2>
+		</div>
+	</div>
+	<div class="cost-calculation">
+		<h3>Parking Cost Calculation</h3>
+		<div class="item">
+			<div class="name">A. Pre Booking Fee</div>
+			<div class="cost">₹50</div>
+		</div>
+		<div class="item">
+			<div class="name">B. First 10 minutes</div>
+			<div class="cost">₹50</div>
+		</div>
+		<div class="item">
+			<div class="name">C. 10 - 60 minutes</div>
+			<div class="cost">₹100 </div>
+		</div>
+		<div class="item">
+			<div class="name">D. After 60 minutes</div>
+			<div class="cost"> ₹200 </div>
+		</div>
+	</div>
+
+	<label for="duration">Enter the duration of your parking spot booking (in minutes):</label>
+	<input type="number" id="duration" name="duration" min="11" required>
+
+	<input type="submit" value="Book Now">
+
+	<div class="card">
+		<a href="pay1.html">
+			<button type="submit">Make Payment</button>
+		</a>
+	</div>
+	<script src="payment.js"></script>
+</body>
+
+</html>
